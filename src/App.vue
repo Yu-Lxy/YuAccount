@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>{{ foo }}</div>
+  <div>{{ str }}</div>
+  <div>{{ count }}</div>
+  <Test :title="test" :count="count" @plus="plus" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import { reactive, ref, toRefs } from 'vue';
+import Test from './components/Test'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Test
+  },
+  setup (props) {
+    console.log(props)
+
+    const state = reactive({
+      count: 2
+    })
+
+    const str = ref('lxy')
+
+    const test = ref('我是vue')
+
+    setTimeout(() => {
+      test.value = '我是vue3'
+    }, 2000)
+
+    const plus = (num) => {
+      state.count += num
+    }
+
+    return {
+      foo: 1,
+      str,
+      test,
+      ...toRefs(state),
+      plus
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
