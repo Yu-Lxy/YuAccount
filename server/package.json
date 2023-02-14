@@ -1,0 +1,17 @@
+{
+  "name": "yu-account-server",
+  "version": "1.0.0",
+  "description": "小鱼记账服务端",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev --port 7000"
+  },
+  "author": "lxy",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.29.3"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.15.0"
+  }
+}

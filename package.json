@@ -1,5 +1,5 @@
 {
-  "name": "YuAccount",
+  "name": "yu-account",
   "version": "1.0.0",
   "description": "小鱼记账🧾",
   "main": "index.js",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Yu-Lxy/YuAccount/issues"
   },
-  "homepage": "https://github.com/Yu-Lxy/YuAccount#readme"
+  "homepage": "https://github.com/Yu-Lxy/YuAccount#readme",
+  "dependencies": {
+    
+  }
 }
